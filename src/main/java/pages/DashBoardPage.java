@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class DashBoardPage extends BasePage {
@@ -19,11 +20,13 @@ public class DashBoardPage extends BasePage {
      private WebElement dockUrlBox;
 
      public void verifyHomePage(String profileuser){
+          wait.until(ExpectedConditions.visibilityOf(profileName));
           Assert.assertEquals(profileName.getText(), profileuser);
           Assert.assertTrue(logo.isDisplayed());
      }
 
      public SettingsPage gotoUserSettingsPage(){
+          wait.until(ExpectedConditions.visibilityOf(profileName));
           profileName.click();
           return new SettingsPage();
      }

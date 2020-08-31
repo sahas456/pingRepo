@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.rmi.server.ExportException;
 
 import static utils.WebElementUtils.*;
 
@@ -29,6 +33,7 @@ public class LoginPage extends BasePage {
 
 
     public DashBoardPage login(String username, String password) {
+        wait.until(ExpectedConditions.visibilityOf(usernameField));
         enterUsername(username);
         enterPassword(password);
         signOn();
