@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 public class DriverFactory {
 
     private static WebDriver driver;
-
     public static String browserName=Config.BROWSER;
     private static String driverLocation="src/main/resources/drivers/";
 
