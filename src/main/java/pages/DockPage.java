@@ -27,6 +27,7 @@ public class DockPage extends BasePage {
     public void checkAdminDetails() {
         wait.until(ExpectedConditions.visibilityOf(profileButton));
         profileButton.click();
+
         Assert.assertTrue(adminLink.isDisplayed());
         Assert.assertTrue(passwordLink.isDisplayed());
     }
